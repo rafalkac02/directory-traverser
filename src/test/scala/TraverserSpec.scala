@@ -8,7 +8,6 @@ import java.io.File
 class DirectorySpec extends AnyFlatSpec with should.Matchers {
 
   it should "traverse given directory" in {
-
     val dir = new File(".\\src")
     traverse(dir) shouldBe Array(
       ".\\src\\main",
@@ -18,5 +17,8 @@ class DirectorySpec extends AnyFlatSpec with should.Matchers {
       ".\\src\\main\\scala\\ws.sc",
       ".\\src\\test\\scala",
       ".\\src\\test\\scala\\TraverserSpec.scala")
+
+    val bsp = new File(".\\.bsp")
+    traverse(bsp) shouldBe Array(".\\.bsp\\sbt.json")
   }
 }
