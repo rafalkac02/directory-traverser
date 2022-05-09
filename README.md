@@ -1,6 +1,6 @@
 # Directory Traverser
 
-A dockerized Scala command-line application that lists file from a given directory.
+A dockerized Scala command-line application that lists files from a given directory. It recursively trav
 
 **Usage:** 
 ```
