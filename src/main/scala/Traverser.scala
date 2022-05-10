@@ -6,6 +6,8 @@ object Traverser extends App {
     (children ++ children.filter(_.isDirectory).flatMap(traverse)).map(_.toString)
   }
 
+  // assume user cooperates
+  // usage: docker run [imageName] [path]
   val f = new File(args(0))
   traverse(f).foreach(println)
 }

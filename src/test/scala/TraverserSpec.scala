@@ -5,7 +5,7 @@ import Traverser._
 
 import java.io.File
 
-class DirectorySpec extends AnyFlatSpec with should.Matchers {
+class TraverserSpec extends AnyFlatSpec with should.Matchers {
 
   it should "traverse given directory" in {
     val dir = new File(".\\src")
