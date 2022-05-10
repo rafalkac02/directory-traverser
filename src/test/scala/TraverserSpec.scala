@@ -8,17 +8,19 @@ import java.io.File
 class TraverserSpec extends AnyFlatSpec with should.Matchers {
 
   it should "traverse given directory" in {
-    val dir = new File(".\\src")
-    traverse(dir) shouldBe Array(
-      ".\\src\\main",
-      ".\\src\\test",
-      ".\\src\\main\\scala",
-      ".\\src\\main\\scala\\Traverser.scala",
-      ".\\src\\main\\scala\\ws.sc",
-      ".\\src\\test\\scala",
-      ".\\src\\test\\scala\\TraverserSpec.scala")
+    val V = java.io.File.separatorChar
 
-    val bsp = new File(".\\.bsp")
-    traverse(bsp) shouldBe Array(".\\.bsp\\sbt.json")
+    val dir = new File("src")
+    traverse(dir) shouldBe Array(
+      s"src${V}main",
+      s"src${V}test",
+      s"src${V}main${V}scala",
+      s"src${V}main${V}scala${V}Traverser.scala",
+      s"src${V}main${V}scala${V}ws.sc",
+      s"src${V}test${V}scala",
+      s"src${V}test${V}scala${V}TraverserSpec.scala")
+
+    val bsp = new File(".bsp")
+    traverse(bsp) shouldBe Array(s".bsp${V}sbt.json")
   }
 }
