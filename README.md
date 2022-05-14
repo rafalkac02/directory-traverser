@@ -4,5 +4,5 @@ A dockerized Scala command-line application that lists files from a given direct
 
 **Usage:** 
 ```
-docker run [imageName] /path/to/a/directory
+docker run [imageName] [path]
 ```
