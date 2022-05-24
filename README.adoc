@@ -1,8 +1,36 @@
 # Directory Traverser
 
-A dockerized Scala command-line application that lists files from a given directory. It traverses recursively through all the subfolders.
+== Project's description
 
-**Usage:** 
+It is a Scala command-line application that lists files from a given directory. It traverses recursively through all the subfolders. Application is runable on Docker after creating an image.
+
+Project uses `java.io.File` to manage provided directories and files adresses.
+
+== Dependencies
+
+In order to enable docker support, file `plugins.sbt` has been creted in `project` folder. It loads `sbt-docker` plugin with `1.8.2` version
+
+`Dockerfile` configurations were added in `build.sbt`.
+
+Moreover, version `3.2.12` of `scalatest` dependencies were added in `build.sbt`.
+
+== How to run?
+Create docker image with `sbt docker` command in project's directory. The image with the latest tag of `rafal/dirTraverse` will be created.
+
+In order to create image with different name, change following lines in build.sbt:
+```java
+docker / imageNames := Seq(
+    // Sets the latest tag
+    ImageName("rafal/dirTraverse"))
+```
+
+Run the application with following command in the project's directory
+
 ```
 docker run [imageName] [path]
+```
+
+To test the application, type in the project's directory:
+```
+sbt test
 ```

@@ -32,7 +32,7 @@ docker / dockerfile := {
 
 docker / imageNames := Seq(
   // Sets the latest tag
-  ImageName("rafal/scoptPrinter"))
+  ImageName("rafal/dirTraverse"))
 
 libraryDependencies += "org.scalactic" %% "scalactic" % "3.2.12"
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.12" % "test"
